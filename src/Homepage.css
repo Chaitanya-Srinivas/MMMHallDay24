@@ -14,9 +14,11 @@
   
   .homepage-title h1 {
     width: 100%;
+    position: relative;
+    top: -20vh;
     font-size: 6rem; /* Adjust the font size as needed */
     color: transparent;
-    background: linear-gradient(to right, #ff4e50, #f9d423, #ff4e50); /* Initial gradient */
+    background: linear-gradient(to right, #2013d5, #f9d423, #ff4e50); /* Initial gradient */
     -webkit-background-clip: text;
     background-clip: text;
     animation: animateGradient 1s linear infinite alternate; /* Adjust duration as needed */
@@ -46,3 +48,13 @@
     object-fit: cover; /* Ensure the image covers the entire slide */
   }
   
+
+  @media (max-width: 768px) {
+    .homepage-title h1 {
+      font-size:2rem;
+      top: -10vh;
+      width: 100%;
+      margin: 0;
+      left: 0;
+    }
+  }

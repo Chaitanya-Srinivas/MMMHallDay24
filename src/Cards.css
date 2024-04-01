@@ -1,98 +1,180 @@
 .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(90deg, #610349, #0c98b4);
+  background-size: 400% 400%;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.card-container {
+  width: 90vw;
+  display: flex;
+}
+
+.card {
+  position: relative;
+  width: calc(50% - 20px);
+  margin: 5vh;
+  height: 50vh;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease; /* Add transition for box-shadow */
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add box shadow on hover for a stylish effect */
+}
+
+.card-content {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10; /* Ensure the title is above the images */
+  text-align: center; /* Center the title */
+}
+
+.card-content h2 {
+  position: relative;
+  top: -50vh;
+  font-size: 2.5rem; /* Increase the font size */
+  color: #f0e8e8; /* Set the text color to white for better visibility */
+}
+
+.card-content p {
+  position: relative;
+  top: -30vh;
+  font-size: 2rem; /* Increase the font size */
+  color: #b0d5f2; 
+}
+.card:hover .card-content h2{
+  color: black;
+}
+.card:hover .card-content p{
+  color: black;
+}
+.card-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .card-images {
+  opacity: 1;
+}
+
+.side-image {
+  opacity: 1;
+  position: relative;
+  left: 0;
+  width: 20vw;
+  height: 50vh;
+  margin: 5vh;
+}
+
+.card:hover .side-image {
+  opacity: 0;
+}
+
+.main-image img {
+  z-index: -1000;
+  height: auto;
+  width: 100%;
+}
+
+.card:hover .main-image {
+  opacity: 0;
+}
+
+.left-image,
+.right-image {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  opacity: 0; /* Initially hidden */
+}
+
+.left-image {
+  left: 50%;
+}
+
+.right-image {
+  right: 50%;
+}
+
+.card:hover .left-image,
+.card:hover .right-image {
+  opacity: 1; /* Show on hover */
+}
+.mob {
+  display: none;
+}
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  .cards-container {
+    padding: 10vh; 
+    flex-direction: column;/* Add padding for better spacing on smaller screens */
   }
   .card-container{
-    width: 90vw;
-    display: flex;
+    width: 100vw;
+    z-index: 1000000;
   }
   .card {
     position: relative;
-    width: calc(50% - 20px);
-    margin: 5vh;
-    height: 50vh;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease; /* Add transition for box-shadow */
+    width: 80vw;
+    left: -23vw; /* Adjust card width to occupy full width on smaller screens */
+    height: 51vh;
   }
-  
-  .card:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add box shadow on hover for a stylish effect */
-  }
-  
-  .card-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10; /* Ensure the title is above the images */
-    text-align: center; /* Center the title */
-  }
-  
+
   .card-content h2 {
-    font-size: 2.5rem; /* Increase the font size */
-    color: #bb0d0d; /* Set the text color to white for better visibility */
+    top: -55vh; /* Adjust position of title for better visibility on smaller screens */
   }
   
-  .card-images {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+
+  .card-content p {
+    top: -30vh; 
+    font-size: 1.2rem;/* Adjust position of content for better visibility on smaller screens */
   }
-  
-  .card:hover .card-images {
-    opacity: 1;
-  }
+
   .side-image {
-    opacity: 1;
+    width: 100%; /* Adjust side image width to occupy full width on smaller screens */
+    height: auto; 
+    display: none;/* Ensure aspect ratio is maintained */
+  }
+  .mob {
+    display: block;
+    
+  }
+  .mob img{
     position: relative;
-    left: 0;
-    width: 20vw;
-    height: 50vh;
-    margin: 5vh;
+    height: 40vh;
+    margin: 2rem;
+    left: -10vh;
+    width: 80vw;
   }
-  .card:hover .side-image {
-    opacity: 0;
-  }
-  .main-image {
-    z-index: -1000;
-    top: 20vh;
-    width: 100%;
-    height: 100%;
-  }
- 
-  .card:hover .main-image{
-    opacity: 0;
-  }
-  .left-image,
-  .right-image {
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all 0.3s ease;
-    opacity: 0; /* Initially hidden */
-  }
-  
-  .left-image {
-    left: 50%;
-  }
-  
-  .right-image {
-    right: 50%;
-  }
-  
-  .card:hover .left-image,
-  .card:hover .right-image {
-    opacity: 1; /* Show on hover */
-  }
-  
+}
