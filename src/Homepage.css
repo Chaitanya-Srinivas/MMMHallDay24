@@ -1,0 +1,48 @@
+.homepage-container {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+  }
+  
+  .homepage-title {
+    position: absolute;
+    top: 10vh; /* Adjust as needed */
+    left: 40vw;
+    transform: translateX(-50%);
+    z-index: 1000; /* Ensure the title appears above the images */
+  }
+  
+  .homepage-title h1 {
+    width: 100%;
+    font-size: 6rem; /* Adjust the font size as needed */
+    color: transparent;
+    background: linear-gradient(to right, #ff4e50, #f9d423, #ff4e50); /* Initial gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: animateGradient 1s linear infinite alternate; /* Adjust duration as needed */
+  }
+  
+  @keyframes animateGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  
+  
+  
+  .image-slide {
+    width: 100vw; /* Ensure the image fills the full width of the viewport */
+    height: 100vh; /* Ensure the image fills the full height of the viewport */
+    position: relative;
+  }
+  
+  .image-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire slide */
+  }
+  
