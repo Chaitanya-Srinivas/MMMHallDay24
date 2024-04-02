@@ -24,7 +24,7 @@ const cardData = [
     desc: "Chaitanya Srinivas & Abhilaash",
     mainImageSrc: "https://i.postimg.cc/rm06cbtM/537.jpg",
     leftImageSrc: "https://i.postimg.cc/xdZpcMxG/Abhilaash.jpg", // Use the same image as the main image
-    rightImageSrc: "https://i.postimg.cc/G3Fz1WCx/Chai.jpg"
+    rightImageSrc: "https://i.postimg.cc/Z5cnMvLS/chaitanya.jpg"
   },
   {
     id: 4,
@@ -45,6 +45,14 @@ const cardData = [
   {
     id: 6,
     roomNo: "SDS 542",
+    desc: "Rahul Raj & Krishna Aditya",
+    mainImageSrc: "https://i.postimg.cc/rm06cbtM/537.jpg",
+    leftImageSrc: "https://i.postimg.cc/yYFQZ775/krishnaaditya.jpg", // Use the same image as the main image
+    rightImageSrc: "https://i.postimg.cc/zfSHCPyq/RahulRaj.jpg"
+  },
+  {
+    id: 7,
+    roomNo: "SDS 543",
     desc: "Ganesh & Praneeth",
     mainImageSrc: "https://i.postimg.cc/rm06cbtM/537.jpg",
     leftImageSrc: "https://i.postimg.cc/13gkhbxB/pranneth.jpg", // Use the same image as the main image
