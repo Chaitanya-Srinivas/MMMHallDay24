@@ -47,7 +47,7 @@ const cardData = [
     roomNo: "SDS 542",
     desc: "Rahul Raj & Krishna Aditya",
     mainImageSrc: "https://i.postimg.cc/rm06cbtM/537.jpg",
-    leftImageSrc: "https://i.postimg.cc/yYFQZ775/krishnaaditya.jpg", // Use the same image as the main image
+    leftImageSrc: "https://i.postimg.cc/0NKjW4S4/VK.jpg", // Use the same image as the main image
     rightImageSrc: "https://i.postimg.cc/zfSHCPyq/RahulRaj.jpg"
   },
   {
